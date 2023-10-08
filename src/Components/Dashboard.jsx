@@ -8,16 +8,19 @@ export default function Dashboard() {
     const postsUrl = "https://demo.ghost.io/ghost/api/content/posts//?key=22444f78447824223cefc48062";
     const authorsUrl = "https://demo.ghost.io/ghost/api/content/authors/?key=22444f78447824223cefc48062";
     const pagesUrl = "https://demo.ghost.io/ghost/api/content/pages/?key=22444f78447824223cefc48062";
+    const tagsUrl = "https://demo.ghost.io/ghost/api/content/tags/?key=22444f78447824223cefc48062";
     const [dataPosts, setdataPosts] = useState([]);
     const [posts, setposts] = useState(0);
     const [authors, setauthors] = useState(0);
     const [pages, setpages] = useState(0);
+    const [tags, setTags] = useState(0);
     const [chartInstance, setChartInstance] = useState(null);
 
     useEffect(() => {
         fetchPosts();
         fetchAuthors();
         fetchPages();
+        fetchTags();
 
     }, []);
 
@@ -81,6 +84,12 @@ export default function Dashboard() {
         }
         ).catch((err) => { console.log(err); })
     }
+    const fetchTags = () => {
+        axios.get(tagsUrl).then((res) => {
+            setTags(res.data.tags.length);
+        }
+        ).catch((err) => { console.log(err); })
+    }
 
     const sortedData = [...dataPosts].sort((a, b) => {
         const dateA = new Date(a.published_at);
@@ -115,6 +124,10 @@ export default function Dashboard() {
                     <div className='bg-slate-100 border-2 border-black p-3 w-1/6 flex items-center justify-around mb-6 rounded-md'>
                         <h2 className='font-bold text-4xl' >Pages </h2>
                         <h1 className='font-bold text-2xl'>{pages}</h1>
+                    </div>
+                    <div className='bg-slate-100 border-2 border-black p-3 w-1/6 flex items-center justify-around mb-6 rounded-md'>
+                        <h2 className='font-bold text-4xl' >tags </h2>
+                        <h1 className='font-bold text-2xl'>{tags}</h1>
                     </div>
                 </div>
 
