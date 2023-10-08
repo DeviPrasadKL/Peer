@@ -14,7 +14,7 @@ function App() {
       
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Dashboard key={key}/>} />
+          <Route exact path="/Peer" element={<Dashboard key={key}/>} />
           <Route path="/posts" element={<Posts/>} />
           <Route path="/post/:id" element={<Post/>} />
           <Route path="/links" element={<Links/>} />
