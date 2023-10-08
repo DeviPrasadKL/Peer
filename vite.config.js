@@ -4,5 +4,6 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base:"/Peer/"
+  base:"/Peer/",
+  envDir: process.env.NODE_ENV === '.env',
 })

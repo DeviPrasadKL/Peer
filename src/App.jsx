@@ -7,14 +7,12 @@ import Post from './Components/Post';
 
 function App() {
 
-  const key = "22444f78447824223cefc48062";
-
   return (
     <div>
       
       <BrowserRouter>
         <Routes>
-          <Route exact path="/Peer" element={<Dashboard key={key}/>} />
+          <Route exact path="/Peer" element={<Dashboard />} />
           <Route path="/posts" element={<Posts/>} />
           <Route path="/post/:id" element={<Post/>} />
           <Route path="/links" element={<Links/>} />

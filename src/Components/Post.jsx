@@ -6,7 +6,8 @@ export default function Post() {
     
     let {id} = useParams();
     const [post, setpost] = useState({});
-    const postsUrl = `https://demo.ghost.io/ghost/api/content/posts/${id}/?key=22444f78447824223cefc48062`;
+    const apiKey = import.meta.env.VITE_API_KEY;
+    const postsUrl = `https://demo.ghost.io/ghost/api/content/posts/${id}/?key=${apiKey}`;
 
     useEffect(() => {
         fetchPosts();

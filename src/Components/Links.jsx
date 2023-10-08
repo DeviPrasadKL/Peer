@@ -2,7 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 export default function Links() {
-  const postsUrl = "https://demo.ghost.io/ghost/api/content/posts//?key=22444f78447824223cefc48062";
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const postsUrl = `https://demo.ghost.io/ghost/api/content/posts//?key=${apiKey}`;
   const [links, setLinks] = useState([]);
   const [internallinks, setinternallinks] = useState([]);
   const [externallinks, setexternallinks] = useState([]);

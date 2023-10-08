@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 import Chart from 'chart.js/auto';
 
 export default function Dashboard() {
+    const apiKey = import.meta.env.VITE_API_KEY;
 
-    const postsUrl = "https://demo.ghost.io/ghost/api/content/posts//?key=22444f78447824223cefc48062";
-    const authorsUrl = "https://demo.ghost.io/ghost/api/content/authors/?key=22444f78447824223cefc48062";
-    const pagesUrl = "https://demo.ghost.io/ghost/api/content/pages/?key=22444f78447824223cefc48062";
-    const tagsUrl = "https://demo.ghost.io/ghost/api/content/tags/?key=22444f78447824223cefc48062";
+    const postsUrl = `https://demo.ghost.io/ghost/api/content/posts//?key=${apiKey}`;
+    const authorsUrl = `https://demo.ghost.io/ghost/api/content/authors/?key=${apiKey}`;
+    const pagesUrl = `https://demo.ghost.io/ghost/api/content/pages/?key=${apiKey}`;
+    const tagsUrl = `https://demo.ghost.io/ghost/api/content/tags/?key=${apiKey}`;
     const [dataPosts, setdataPosts] = useState([]);
     const [posts, setposts] = useState(0);
     const [authors, setauthors] = useState(0);

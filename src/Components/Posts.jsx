@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 export default function Posts() {
 
-  const postsUrl = "https://demo.ghost.io/ghost/api/content/posts//?key=22444f78447824223cefc48062";
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const postsUrl = `https://demo.ghost.io/ghost/api/content/posts//?key=${apiKey}`;
   const [posts, setposts] = useState([]);
 
   useEffect(() => {
