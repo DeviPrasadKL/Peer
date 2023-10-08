@@ -97,7 +97,7 @@ export default function Dashboard() {
             </div>
             <div className='flex justify-center flex-col p-6'>
 
-                <div className='flex items-center justify-center w-screen'>
+                <div className='flex items-center justify-center'>
                     <div className='w-2/4' >
                         <canvas id="barGraph" width="200" height="100"></canvas>
                     </div>
